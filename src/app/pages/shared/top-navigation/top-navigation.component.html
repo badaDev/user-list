@@ -1,0 +1,13 @@
+<div class="top-nav">
+    <div class="user-details">
+        <img src="{{loggedInUser.photoURL}}" alt="user image" class="user-img">
+      <span class="name">
+            {{loggedInUser.displayName}}  
+      </span>
+      <br>
+      <span class="logout" (click)="logOutWithGoogle()">
+        Logout
+    </span>
+    </div>
+  </div>
+  
