@@ -1,11 +1,11 @@
 <div class="container-fluid">
     <div class="custom-card">
-        <form [formGroup]="signUpForm">
+        <form [formGroup]="signUpForm" (ngSubmit)="signUpWithEmail()">
             <div class="form-group">
                 <input 
                     type="email" 
                     class="form-control"
-                    placeholder=" "
+                    placeholder=" Email "
                     formControlName="email"
                 >
             </div>
@@ -14,26 +14,25 @@
                 <input 
                     type="password" 
                     class="form-control"
-                    placeholder=" "
+                    placeholder=" Password "
                     formControlName="password"
                 >
             </div>
     
             <button 
                 type="submit" 
-                class="btn btn-block btn-primary"
-                (click)="signUpWithEmail()">
+                class="btn btn-block btn-primary">
                     Sign UP
-            </button>
-    
-            <p class="horizontal-line-text">
-                <span>or</span>
-            </p>
-    
-            <button class="btn btn-block google-sign-in">
-                <img src="../../../../assets/images/Google__G__Logo.svg.webp" alt="google">
-                <span>register with google</span>
-            </button>
+            </button> 
         </form>
+
+        <p class="horizontal-line-text">
+            <span>or</span>
+        </p>
+
+        <button class="btn btn-block google-sign-in">
+            <img src="../../../../assets/images/Google__G__Logo.svg.webp" alt="google">
+            <span>register with google</span>
+        </button>
     </div>
 </div>

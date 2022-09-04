@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 
+import * as alertify from 'alertifyjs';
+
 
 @Component({
   selector: 'app-sign-in',
@@ -27,18 +29,20 @@ export class SignInComponent implements OnInit {
 
   initializeForm() {
     this.loginForm = this.formBuilder.group({
-      email: ['Enter Email', Validators.compose([Validators.required])],
-      password: ['Enter Password', Validators.compose([Validators.required])]
+      email: [null, Validators.compose([Validators.required])],
+      password: [null, Validators.compose([Validators.required])]
     })
   }
 
   signInWithGoogle() {
     this.authService.GoogleAuth();
-    // this.router.navigate(['sign-up']);
   }
 
   signinWithEmail() {
-    // this.authService.SignInWithEmail()
+    if(this.loginForm.valid) {
+      this.authService.SignInWithEmail(this.loginForm.get('email').value, this.loginForm.get('password').value);
+    }
+    
   }
   
 

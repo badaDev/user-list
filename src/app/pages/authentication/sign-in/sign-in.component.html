@@ -1,11 +1,12 @@
 <div class="container-fluid">
-    <form [formGroup]="loginForm">
-        <div class="custom-card">
+    <div class="custom-card">
+        <form [formGroup]="loginForm" (ngSubmit)="signinWithEmail()">
             <div class="form-group">
                 <input 
                     type="email" 
                     class="form-control"
-                    placeholder="Enter Email Address"
+                    placeholder=" Email "
+                    formControlName="email"
                 >
             </div>
     
@@ -13,25 +14,27 @@
                 <input 
                     type="password" 
                     class="form-control"
-                    placeholder="Password"
+                    placeholder=" Password "
+                    formControlName="password"
                 >
             </div>
     
-            <button class="btn btn-block btn-primary" (click)="signinWithEmail()">Sign in</button>
-    
-            <p class="horizontal-line-text">
-                <span>or</span>
-            </p>
-    
-            <button class="btn btn-block google-sign-in" (click)="signInWithGoogle()">
-                <img src="../../../../assets/images/Google__G__Logo.svg.webp" alt="google">
-                <span>login with google</span>
-            </button>
-    
-            <div class="sign-up">
-                <span>Don't have and account?</span>
-                <span class="sign-up-link" routerLink="sign-up">Sign Up</span>
-            </div>
+            <button class="btn btn-block btn-primary">Sign in</button>
+        </form>
+
+        <p class="horizontal-line-text">
+            <span>or</span>
+        </p>
+
+        <button class="btn btn-block google-sign-in" (click)="signInWithGoogle()">
+            <img src="../../../../assets/images/Google__G__Logo.svg.webp" alt="google">
+            <span>login with google</span>
+        </button>
+
+        <div class="sign-up">
+            <span>Don't have and account?</span>
+            <span class="sign-up-link" routerLink="sign-up">Sign Up</span>
         </div>
-    </form>
+    </div>
+    
 </div>

@@ -10,6 +10,8 @@ import {
 } from '@angular/fire/compat/firestore';
 import { Router } from '@angular/router';
 
+import * as alertify from 'alertifyjs';
+
 
 // export const oAuthConfig: AuthConfig = {
 //   issuer: "https://accounts.google.com",
@@ -78,7 +80,8 @@ export class AuthService {
         this.SetUserData(result.user);
         this.afAuth.authState.subscribe((user) => {
           if (user) {
-            this.router.navigate(['dashboard']);
+            this.router.navigate(['layout/dashboard']);
+            alertify.success('Login Successful')
           }
         });
       })
@@ -97,6 +100,7 @@ export class AuthService {
         up and returns promise */
         this.SendVerificationMail();
         this.SetUserData(result.user);
+        alertify.success('User Registered')
       })
       .catch((error) => {
         window.alert(error.message);
@@ -136,6 +140,7 @@ export class AuthService {
   GoogleAuth() {
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
       this.router.navigate(['layout/dashboard']);
+      alertify.success('Login Successful');
     });
   }
 

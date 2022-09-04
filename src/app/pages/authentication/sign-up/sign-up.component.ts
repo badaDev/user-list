@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from 'src/app/core/services/auth.service';
 
+import * as alertify from 'alertifyjs';
 @Component({
   selector: 'app-sign-up',
   templateUrl: './sign-up.component.html',
@@ -25,15 +26,18 @@ export class SignUpComponent implements OnInit {
 
   initializeForm() {
     this.signUpForm = this.formBuilder.group({
-      email: ['Enter Email', Validators.compose([Validators.required])],
-      password: ['Enter Password', Validators.compose([Validators.required])]
+      email: [null, Validators.compose([Validators.required])],
+      password: [null, Validators.compose([Validators.required])]
     })
   }
 
   signUpWithEmail() {
-    this.authService.SignUpWithEmail(this.signUpForm.get('email').value, this.signUpForm.get('password').value);
-    this.router.navigate(['/'])
-    console.log("user registered");
+    if(this.signUpForm.valid) {
+      this.authService.SignUpWithEmail(this.signUpForm.get('email').value, this.signUpForm.get('password').value);
+      this.router.navigate(['/'])
+      console.log("user registered");
+    }
+    
     
   }
 }
