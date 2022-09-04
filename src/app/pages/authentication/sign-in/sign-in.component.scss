@@ -47,6 +47,28 @@
             //     // vertical-align: middle;
             // }
         }
+
+        .sign-up {
+            text-align: center;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            padding: 6px 0px;
+            margin: 0 auto;
+
+            span {
+                padding: 0px 6px;
+                font-size: 1rem;
+                font-weight: 500;
+                color: #343A40;
+            }
+
+            .sign-up-link {
+                color: #1363DF;
+                font-style: italic;
+                cursor: pointer;
+            }
+        }
     }
 }
 

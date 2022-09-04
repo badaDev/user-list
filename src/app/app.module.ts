@@ -13,6 +13,7 @@ import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { AngularFireDatabaseModule } from '@angular/fire/compat/database';
 import { environment } from '../environments/environment';
 import { AuthService } from './core/services/auth.service';
+import { ReactiveFormsModule } from '@angular/forms';
 
 
 
@@ -31,6 +32,7 @@ import { AuthService } from './core/services/auth.service';
     AngularFirestoreModule,
     AngularFireStorageModule,
     AngularFireDatabaseModule,
+    ReactiveFormsModule
   ],
   providers: [ AuthService ],
   bootstrap: [AppComponent]
