@@ -71,63 +71,6 @@ export class AuthService {
   // }
 
   
-  
-  // this function Sign in the users with their email/password
-  SignInWithEmail(email: string, password: string) {
-    return this.afAuth
-      .signInWithEmailAndPassword(email, password)
-      .then((result) => {
-        this.SetUserData(result.user);
-        this.afAuth.authState.subscribe((user) => {
-          if (user) {
-            this.router.navigate(['layout/dashboard']);
-            alertify.success('Login Successful')
-          }
-        });
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
-  }
-
-
-  //this function Sign up the users with their email/password
-  SignUpWithEmail(email: string, password: string) {
-    return this.afAuth
-      .createUserWithEmailAndPassword(email, password)
-      .then((result) => {
-        /* Call the SendVerificaitonMail() function when new user sign 
-        up and returns promise */
-        this.SendVerificationMail();
-        this.SetUserData(result.user);
-        alertify.success('User Registered')
-      })
-      .catch((error) => {
-        window.alert(error.message);
-      });
-  }
-
-  // Send email verfificaiton when new user sign up
-  SendVerificationMail() {
-    return this.afAuth.currentUser
-      .then((u: any) => u.sendEmailVerification())
-      .then(() => {
-        this.router.navigate(['verify-email-address']);
-      });
-  }
-
-
-  // Reset Forggot password
-  ForgotPassword(passwordResetEmail: string) {
-    return this.afAuth
-      .sendPasswordResetEmail(passwordResetEmail)
-      .then(() => {
-        window.alert('Password reset email sent, check your inbox.');
-      })
-      .catch((error) => {
-        window.alert(error);
-      });
-  }
 
 
   //this checks if the user is looged in and email is verified
@@ -137,7 +80,7 @@ export class AuthService {
   }
 
   //this Sign in the user with Google
-  GoogleAuth() {
+  googleAuthSignIn() {
     return this.AuthLogin(new auth.GoogleAuthProvider()).then((res: any) => {
       this.router.navigate(['layout/dashboard']);
       alertify.success('Login Successful');

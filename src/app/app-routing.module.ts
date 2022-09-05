@@ -12,10 +12,6 @@ const routes: Routes = [
   {
     path: '', component: SignInComponent
   },
-  
-  { path: 'sign-up', 
-    loadChildren: () => 
-    import('./pages/authentication/sign-up/sign-up.module').then(m => m.SignUpModule) },
 
   { path: 'layout', 
     loadChildren: () => 

@@ -27,6 +27,10 @@
     max-width: 600px;
     display: table;
     margin: 0 auto;
+
+    .not-found{
+      color: #EB1D36;
+    }
   }
   .item {
     display: flex;

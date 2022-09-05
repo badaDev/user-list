@@ -1,6 +1,9 @@
 <div class="container-fluid">
     <div class="custom-card">
-        <form [formGroup]="loginForm" (ngSubmit)="signinWithEmail()">
+
+        <img src="../../../../assets/images/Angular_Logo-removebg-preview.png" alt="" srcset="">
+        <hr>
+        <!-- <form [formGroup]="loginForm" (ngSubmit)="signinWithEmail()">
             <div class="form-group">
                 <input 
                     type="email" 
@@ -20,21 +23,19 @@
             </div>
     
             <button class="btn btn-block btn-primary">Sign in</button>
-        </form>
+        </form> -->
 
-        <p class="horizontal-line-text">
-            <span>or</span>
-        </p>
+        
 
         <button class="btn btn-block google-sign-in" (click)="signInWithGoogle()">
             <img src="../../../../assets/images/Google__G__Logo.svg.webp" alt="google">
-            <span>login with google</span>
+            <span>login with gmail</span>
         </button>
 
-        <div class="sign-up">
+        <!-- <div class="sign-up">
             <span>Don't have and account?</span>
             <span class="sign-up-link" routerLink="sign-up">Sign Up</span>
-        </div>
+        </div> -->
     </div>
     
 </div>

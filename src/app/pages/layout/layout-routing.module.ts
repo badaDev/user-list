@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { SourceCodeComponent } from '../source-code/source-code.component';
 import { LayoutComponent } from './layout.component';
 
 const routes: Routes = [
@@ -10,6 +11,9 @@ const routes: Routes = [
         loadChildren: () => 
         import('../dashboard/dashboard.module').then(m => m.DashboardModule) 
       },
+      {
+        path: 'source-code', component: SourceCodeComponent
+      }
     ] 
   }
 ];

@@ -9,13 +9,15 @@ import { SearchFilterPipe } from 'src/app/core/pipes/search-filter.pipe';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { UserFilterPipe } from 'src/app/core/pipes/userFilter.pipe';
 import { AutocompleteLibModule } from 'angular-ng-autocomplete';
+import { SourceCodeComponent } from '../source-code/source-code.component';
 
 
 @NgModule({
   declarations: [
     DashboardComponent,
     SearchFilterPipe,
-    UserFilterPipe
+    UserFilterPipe,
+    SourceCodeComponent
   ],
   imports: [
     CommonModule,

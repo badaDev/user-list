@@ -11,7 +11,7 @@
 
     <ul class="sidenav-nav">
         <li class="sidenav-nav-item" *ngFor="let data of navData">
-            <a routerLink="{{ data.routeLink }}" class="sidenav-nav-link">
+            <a routerLink="{{ data.routeLink }}" class="sidenav-nav-link" target="{{data.target}}" routerLinkActive="sidenav-nav-item_active">
                 <i class="sidenav-link-icon" [class]="data.icon"></i>
                 <span class="sidenav-link-text small-screen" *ngIf="collapsed">{{ data.label }}</span>
             </a>

@@ -35,14 +35,7 @@ export class SignInComponent implements OnInit {
   }
 
   signInWithGoogle() {
-    this.authService.GoogleAuth();
-  }
-
-  signinWithEmail() {
-    if(this.loginForm.valid) {
-      this.authService.SignInWithEmail(this.loginForm.get('email').value, this.loginForm.get('password').value);
-    }
-    
+    this.authService.googleAuthSignIn();
   }
   
 

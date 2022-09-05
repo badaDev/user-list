@@ -1,27 +1,37 @@
 # UserListApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0. It fectches
+a list of users from an API displaying them on the dashboard
 
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 
-## Code scaffolding
+# Login
+The app uses google login authentication for users to login with gmail account
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+# Search-box
+The app features a search box at the top of the dashboard page which helps users filter the list 
+of the displayed users
 
-## Build
+## Running the project
+To run this project, first clone the repository.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+```
+git clone https://github.com/badaDev/user-list.git
 
-## Running unit tests
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+Navigate to the project directory and install the necessary dependencies (note: the project is set up to run with npm):
 
-## Running end-to-end tests
+```
+cd user-list
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+npm install
+```
 
-## Further help
+You can then run the project - this will launch the application in your browser (localhost:4200)
+```
+ng serve
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

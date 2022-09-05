@@ -11,20 +11,15 @@
         padding: 30px;
         width: 400px;
 
-
-        .horizontal-line-text {
-            width: 100%;
-            text-align: center;
-            border-bottom: 1px solid #D8DDEC;
-            line-height: 0.1rem;
-            margin: 25px 0 30px 0;
+        // .horizontal-line-text {
+        //     width: 100%;
+        //     text-align: center;
+        //     border-bottom: 1px solid #D8DDEC;
+        //     // margin: 25px 0 30px 0;
 
             
-            span {
-                background: #fff;
-                padding: 0 10px;
-            }
-        }
+            
+        // }
 
         .google-sign-in {
             background: #fff;
@@ -46,28 +41,6 @@
             // span {
             //     // vertical-align: middle;
             // }
-        }
-
-        .sign-up {
-            text-align: center;
-            display: flex;
-            flex-direction: row;
-            justify-content: center;
-            padding: 6px 0px;
-            margin: 0 auto;
-
-            span {
-                padding: 0px 6px;
-                font-size: 1rem;
-                font-weight: 500;
-                color: #343A40;
-            }
-
-            .sign-up-link {
-                color: #1363DF;
-                font-style: italic;
-                cursor: pointer;
-            }
         }
     }
 }
